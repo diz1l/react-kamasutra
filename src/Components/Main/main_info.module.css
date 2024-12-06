@@ -1,0 +1,142 @@
+.appContent {
+    grid-area: content;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appContentBody {
+    display: grid;
+    grid-template-areas:
+        "content-header content-header"
+        "c-logo name"
+        "c-logo description"
+        "title title"
+        "input input"
+        "button button"
+        "coment-logo coment-text"
+        "coment-logo coment-text";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 16px;
+}
+
+.appContentHeader {
+    grid-area: content-header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appContentHeader img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.contentLogo {
+    grid-area: c-logo;
+    display: flex;
+    justify-content: center;
+}
+
+.contentLogo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.contentName {
+    grid-area: name;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contentDescription {
+    grid-area: description;
+    font-size: 16px;
+    color: #777;
+}
+
+.contentTitle {
+    grid-area: title;
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+}
+
+.contentInput {
+    grid-area: input;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contentInput input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contentInput input:focus {
+    border-color: #009dff;
+}
+
+.contentButton {
+    grid-area: button;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.contentButton .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 48px;
+    padding: 0 20px;
+    background-color: #009dff;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contentButton .button:hover {
+    background-color: #007acc;
+}
+
+.contentComentLogo {
+    grid-area: coment-logo;
+    display: flex;
+    justify-content: center;
+}
+
+.contentComentLogo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contentComentText {
+    grid-area: coment-text;
+    font-size: 16px;
+    color: #555;
+    border: 1px solid #eee;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+}

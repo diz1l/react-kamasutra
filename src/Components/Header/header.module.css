@@ -1,0 +1,16 @@
+.appHeader {
+    grid-area: header;
+    background-color: #0095ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-radius: 12px;
+}
+
+.appHeader img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}

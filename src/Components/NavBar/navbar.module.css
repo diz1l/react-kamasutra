@@ -1,0 +1,33 @@
+.appNav {
+    grid-area: navig;
+    background-color: #0094fd;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.appNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.appNav ul li {
+    font-size: 18px;
+}
+
+.appNav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.appNav ul li a:hover {
+    background-color: #00a5c6;
+}
