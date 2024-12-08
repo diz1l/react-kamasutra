@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./posts.module.css";
 
-const Posts = () => {
+const Posts = (props) => {
     return (
         <div className={s.postsContentBody}>
             <div className={s.contentComentLogo}>
@@ -11,7 +11,7 @@ const Posts = () => {
                 />
             </div>
             <div className={s.contentComentText}>
-                ЧТО С ТЕНГЕ ПРОИСХОДИТ !?
+                {props.message}
             </div>
         </div>
     );

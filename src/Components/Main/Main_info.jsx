@@ -50,7 +50,9 @@ const MainInfo = () => {
             </div>
 
             {/* Posts Section */}
-            <Posts />
+            <Posts message="ЧТО С ТЕНГЕ ПРОИСХОДИТ !?"/>
+            <Posts message="ХЗ"/>
+
         </div>
     );
 };
