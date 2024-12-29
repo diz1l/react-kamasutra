@@ -1,96 +1,40 @@
 .appContent {
-    grid-area: content;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.appContentBody {
-    display: grid;
-    grid-template-areas:
-        "content-header content-header"
-        "c-logo name"
-        "c-logo description"
-        "title title"
-        "input input"
-        "button button";
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 16px;
-}
-
-.appContentHeader {
-    grid-area: content-header;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.appContentHeader img {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.contentLogo {
-    grid-area: c-logo;
-    display: flex;
-    justify-content: center;
-}
-
-.contentLogo img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-}
-
-.contentName {
-    grid-area: name;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-.contentDescription {
-    grid-area: description;
-    font-size: 16px;
-    color: #777;
-}
-
 .contentTitle {
-    grid-area: title;
     font-size: 20px;
     font-weight: 500;
     color: #444;
 }
 
-.contentInput {
-    grid-area: input;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contentInput input {
+.contentInputInput {
+    margin-top: 20px;
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 25px;
     outline: none;
-    transition: border-color 0.3s;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #555;
 }
 
-.contentInput input:focus {
-    border-color: #009dff;
+.contentInputInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
 }
+
+
 
 .contentButton {
-    grid-area: button;
     display: flex;
     justify-content: flex-end;
     margin-top: 12px;
