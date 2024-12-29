@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './dialogs.module.css';
+import {Link} from "react-router-dom";
 
 const Dialogs = () => {
     return (
         <div className={styles.dialogsWrapper}>
             <div className={styles.dialogsList}>
                 <ul>
-                    <li>Andrew</li>
-                    <li className={styles.active}>Dmitry</li>
-                    <li>Sasha</li>
-                    <li>Sveta</li>
-                    <li>Valera</li>
-                    <li>Viktor</li>
+                    <Link to="/dialogs/1"><li>Andrew</li></Link>
+                    <Link to="/dialogs/2"><li className={styles.active}>Dmitry</li></Link>
+                    <Link to="/dialogs/3"><li>Sasha</li></Link>
+                    <Link to="/dialogs/4"><li>Sveta</li></Link>
+                    <Link to="/dialogs/5"><li>Valera</li></Link>
+                    <Link to="/dialogs/6"><li>Viktor</li></Link>
                 </ul>
             </div>
             <div className={styles.messages}>

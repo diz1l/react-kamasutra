@@ -14,7 +14,7 @@ function App() {
                 <div className="app-content">
                     <Routes>
                         <Route path="/" element={<Main_info />} />
-                        <Route path="/dialogs" element={<Dialogs />} />
+                        <Route exact path="/dialogs" element={<Dialogs />} />
                     </Routes>
                 </div>
             </div>
