@@ -4,6 +4,12 @@ import Posts from "./MyPosts/Posts";
 import Profile_info from "./ProfileInfo/Profile_info";
 
 const MainInfo = () => {
+
+    let messegeData2 = [
+        {id: 1, message: 'ЧТО С ТЕНГЕ ПРОИСХОДИТ !?', likeCount: 2},
+        {id: 2, message: 'ХЗ', likeCount: 20},
+    ];
+
     return (
         <div className={styles.appContent}>
             <div className={styles.appContentBody}>
@@ -33,8 +39,8 @@ const MainInfo = () => {
             </div>
 
             {/* Posts Section */}
-            <Posts message="ЧТО С ТЕНГЕ ПРОИСХОДИТ !?"/>
-            <Posts message="ХЗ"/>
+            <Posts message={messegeData2[0].message} likeCount={messegeData2[0].likeCount}/>
+            <Posts message={messegeData2[1].message} likeCount={messegeData2[1].likeCount}/>
 
         </div>
     );

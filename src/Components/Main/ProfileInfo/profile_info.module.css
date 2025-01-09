@@ -1,28 +1,29 @@
 /* General Styles */
 .appContent {
-    grid-area: content;
     font-family: 'Arial', sans-serif;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Body Section */
 .appContentBody {
-    display: grid;
-    grid-template-areas:
-        "content-header content-header"
-        "c-logo name"
-        "c-logo description"
-        "title title";
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
 }
 
+/* Header Section */
 .appContentHeader {
-    grid-area: content-header;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .appContentHeader img {
@@ -34,11 +35,10 @@
     border: 2px solid #ddd;
 }
 
+/* Logo Section */
 .contentLogo {
-    margin-left: 100px;
-    grid-area: c-logo;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #f1f1f1;
     border-radius: 50%;
@@ -56,32 +56,32 @@
     object-fit: cover;
 }
 
+/* Name Section */
 .contentName {
-    margin-left: -85px;
-    grid-area: name;
     font-size: 28px;
     font-weight: bold;
     color: #222;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 8px 0;
 }
 
+/* Description Section */
 .contentDescription {
-    margin-left: -100px;
-    grid-area: description;
     font-size: 18px;
     color: #555;
     line-height: 1.6;
-    padding: 8px 0;
+    padding: 16px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Title Section */
 .contentTitle {
-    grid-area: title;
     text-align: center;
     font-size: 24px;
     font-weight: 600;
