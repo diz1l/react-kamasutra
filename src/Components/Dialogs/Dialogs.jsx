@@ -1,71 +1,59 @@
 import React from 'react';
 import styles from './dialogs.module.css';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Dialogs_Item = (props) => {
-    let path = "/dialogs/" + props.id
-
+const DialogItem = ({ id, name }) => {
+    const path = `/dialogs/${id}`;
     return (
-        <Link to={path}><li className={styles}>{props.name}</li></Link>
-    )
-}
+        <Link to={path}>
+            <li className={styles.dialogItem}>{name}</li>
+        </Link>
+    );
+};
 
-const Dialogs_Messege = (props) =>{
+const Message = ({ message, isMe }) => {
     return (
-        <div className={styles.text}>{props.message}</div>
-    )
-}
+        <div className={`${styles.message} ${isMe ? styles.me : ""}`}>
+            <div className={styles.avatar}>{isMe ? "Me" : "A"}</div>
+            <div className={styles.text}>{message}</div>
+        </div>
+    );
+};
 
-const Dialogs = (props) => {
-
-    let dialogsData = [
-            {id: 1, name: 'Dima'},
-            {id: 2, name: 'Serbkbol'},
-            {id: 3, name: 'Chingiz'},
-            {id: 4, name: 'Miras'},
-            {id: 5, name: 'Egor'},
-        ];
-
-    let messegeData = [
-        {id: 1, message: 'Q'},
-        {id: 2, message: 'Q'},
-        {id: 3, message: 'cho tam'},
-        {id: 4, message: 'a cho'},
-        {id: 5, message: 'a ni cho na, narmlno obshaysa'},
+const Dialogs = () => {
+    const dialogsData = [
+        { id: 1, name: 'Dima' },
+        { id: 2, name: 'Serbkbol' },
+        { id: 3, name: 'Chingiz' },
+        { id: 4, name: 'Miras' },
+        { id: 5, name: 'Egor' },
     ];
+
+    const messagesData = [
+        { id: 1, message: 'Q', isMe: false },
+        { id: 2, message: 'Q', isMe: true },
+        { id: 3, message: 'cho tam', isMe: false },
+        { id: 4, message: 'a cho', isMe: true },
+        { id: 5, message: 'a ni cho na, narmlno obshaysa', isMe: false },
+    ];
+
+    const dialogsElements = dialogsData.map(dialog => (
+        <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />
+    ));
+
+    const messagesElements = messagesData.map(msg => (
+        <Message key={msg.id} message={msg.message} isMe={msg.isMe} />
+    ));
 
     return (
         <div className={styles.dialogsWrapper}>
             <div className={styles.dialogsList}>
                 <ul>
-                    <Dialogs_Item name={dialogsData[0].name} id={dialogsData[0].id}/>
-                    <Dialogs_Item name={dialogsData[1].name} id={dialogsData[1].id}/>
-                    <Dialogs_Item name={dialogsData[2].name} id={dialogsData[2].id}/>
-                    <Dialogs_Item name={dialogsData[3].name} id={dialogsData[3].id}/>
-                    <Dialogs_Item name={dialogsData[4].name} id={dialogsData[4].id}/>
+                    {dialogsElements}
                 </ul>
             </div>
             <div className={styles.messages}>
-                <div className={styles.message}>
-                    <div className={styles.avatar}></div>
-                    <Dialogs_Messege message={messegeData[0].message}/>
-                </div>
-                <div className={`${styles.message} ${styles.me}`}>
-                    <div className={styles.avatar}></div>
-                    <Dialogs_Messege message={messegeData[1].message}/>
-                </div>
-                <div className={styles.message}>
-                    <div className={styles.avatar}></div>
-                    <Dialogs_Messege message={messegeData[2].message}/>
-                </div>
-                <div className={`${styles.message} ${styles.me}`}>
-                    <div className={styles.avatar}></div>
-                    <Dialogs_Messege message={messegeData[3].message}/>
-                </div>
-                <div className={styles.message}>
-                    <div className={styles.avatar}></div>
-                    <Dialogs_Messege message={messegeData[4].message}/>
-                </div>
+                {messagesElements}
             </div>
         </div>
     );
